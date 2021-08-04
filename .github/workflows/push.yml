@@ -26,9 +26,10 @@ jobs:
       - name: Docker Build
         env:
           STAGE_CACHE: ${{ env.PACKAGE_REGISTRY }}/${{ env.USERNAME }}/${{ env.REPOSITORY }}:stage
-        run: docker build \
-              --tag=${{ env.STAGE_CACHE }} \
-              .
+        run: |
+          docker build \
+            --tag=${{ env.STAGE_CACHE }} \
+            .
 
       - name: Docker Publish
         run: docker push --all-tags ${{ env.PACKAGE_REGISTRY }}/${{ env.USERNAME }}/${{ env.REPOSITORY }}
