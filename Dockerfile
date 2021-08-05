@@ -10,7 +10,7 @@ ARG UDP2RAW_URL="https://github.com/wangyu-/udp2raw-tunnel/releases/download/${U
 
 RUN set -eux \
     && apk add --no-cache \
-    tzdata \
+        tzdata \
     \
     && wget -O udp2raw_binaries.tar.gz ${UDP2RAW_URL} \
     && tar -xzvf udp2raw_binaries.tar.gz udp2raw_amd64 -C /usr/local/bin/ \
