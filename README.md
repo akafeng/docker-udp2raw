@@ -26,8 +26,8 @@ $ docker pull ghcr.io/akafeng/udp2raw
 
 ```bash
 $ docker run -d \
-  --network host\
-  --restart always \
+  --network=host \
+  --restart=always \
   --name=udp2raw \
   ghcr.io/akafeng/udp2raw \
   -s \

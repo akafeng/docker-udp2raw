@@ -13,7 +13,8 @@ RUN set -eux \
         tzdata \
     \
     && wget -O udp2raw_binaries.tar.gz ${UDP2RAW_URL} \
-    && tar -xzvf udp2raw_binaries.tar.gz udp2raw_amd64 -C /usr/local/bin/ \
+    && tar -xzvf udp2raw_binaries.tar.gz udp2raw_amd64_hw_aes -C /usr/local/bin/ \
+    && mv /usr/local/bin/udp2raw_amd64_hw_aes /usr/local/bin/udp2raw \
     && rm -rf udp2raw_binaries.tar.gz
 
-ENTRYPOINT ["/usr/local/bin/udp2raw_amd64"]
+ENTRYPOINT ["udp2raw"]
